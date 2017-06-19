@@ -25,7 +25,7 @@ $previousurl ：页面跳转的地址
 <div class="system-message">
     <h1>抱歉,出错啦!</h1>
     <p class="jump">
-        <b id="wait">3</b> 秒后页面将自动跳转，点击<a id="href" href="{{ $previousurl }}">返回</a>直接跳转
+        <b id="wait">3</b> 秒后页面将自动跳转，点击<a id="href" href="{{ URL::previous() }}">返回</a>直接跳转
     </p>
 </div>
 <script language="javascript" type="text/javascript">
@@ -34,7 +34,7 @@ $previousurl ：页面跳转的地址
     intervalid = setInterval("fun()", 1000);
     function fun() {
         if (i == 0) {
-            window.location.href = "{{ $previousurl }}";
+            window.location.href = "{{ URL::previous() }}";
             clearInterval(intervalid);
         }
         i--;

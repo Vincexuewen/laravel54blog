@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     //
     public function dashboard(){
-        abort(403);
+        abort(404);
     }
 }
