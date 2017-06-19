@@ -34,7 +34,7 @@ class RegisterController extends Controller
         if($res){
             return view('Admin.Login.login');
         }else{
-            return view('error.error')->with('previousurl','/login');
+            abort(403);
         }
     }
 }
