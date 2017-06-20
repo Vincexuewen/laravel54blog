@@ -12,9 +12,9 @@
     <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
     <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
     <meta name="author" content="Codrops" />
-    <link rel="stylesheet" type="text/css" href="static/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/animate-custom.css" />
+    <link rel="stylesheet" type="text/css" href="static/Admin/css/Login/demo.css" />
+    <link rel="stylesheet" type="text/css" href="static/Admin/css/Login/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/Admin/css/Login/animate-custom.css" />
 </head>
 <body>
 <div class="container">

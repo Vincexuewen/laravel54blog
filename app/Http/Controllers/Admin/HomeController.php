@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     //
     public function dashboard(){
-        abort(404);
+        return view('Admin.Home.dashboard');
     }
 }
