@@ -63,43 +63,17 @@
                 <li class="{{ Request::is('Admin/dashboard') ? 'active' : '' }}">
                     <a href="/Admin/dashboard"><i class="fa fa-th-large"></i> <span class="nav-label">主页</span></a>
                 </li>
-                <li>
+                <li class="{{ Request::is('Admin/system_manage/*') ? 'active' : '' }}">
                     <a href="#"><i class="fa fa-cogs"></i><span class="nav-label">系统设置</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="/Admin/system_manage/admin_manage/admin_list">管理员管理</a>
+                        <li class="{{ Request::is('Admin/system_manage/admin_manage/*') ? 'active' : '' }}">
+                            <a href="/Admin/system_manage/admin_manage/admin_list">管理员管理</a>
                         </li>
-                        <li><a href="/Admin/system_manage/role_manage/admin_list">角色管理</a>
+                        <li class="{{ Request::is('Admin/system_manage/role_manage/*') ? 'active' : '' }}">
+                            <a href="/Admin/system_manage/role_manage/role_list">角色管理</a>
                         </li>
-                        <li><a href="/Admin/system_manage/auth_manage/auth_list">权限管理</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="index.html#"><i class="fa fa-desktop"></i> <span class="nav-label">页面</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="contacts.html">联系人</a>
-                        </li>
-                        <li><a href="profile.html">个人资料</a>
-                        </li>
-                        <li><a href="projects.html">项目</a>
-                        </li>
-                        <li><a href="project_detail.html">项目详情</a>
-                        </li>
-                        <li><a href="file_manager.html">文件管理器</a>
-                        </li>
-                        <li><a href="calendar.html">日历</a>
-                        </li>
-                        <li><a href="faq.html">帮助中心</a>
-                        </li>
-                        <li><a href="timeline.html">时间轴</a>
-                        </li>
-                        <li><a href="pin_board.html">标签墙</a>
-                        </li>
-                        <li><a href="invoice.html">单据</a>
-                        </li>
-                        <li><a href="login.html">登录</a>
-                        </li>
-                        <li><a href="register.html">注册</a>
+                        <li class="{{ Request::is('Admin/system_manage/permission_manage/*') ? 'active' : '' }}">
+                            <a href="/Admin/system_manage/permission_manage/permission_list">权限管理</a>
                         </li>
                     </ul>
                 </li>

@@ -27,6 +27,6 @@ class LoginController extends Controller
             //withInput()带所有的值返回
             return Redirect::back()->withInput($request->all())->with('errors','用户名和密码不匹配');
         }
-        return redirect('/dashboard');
+        return redirect('/Admin/dashboard');
     }
 }
