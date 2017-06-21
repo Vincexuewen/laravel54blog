@@ -57,7 +57,9 @@
                                 <td>{{ $admin->created_at }}</td>
                                 <td>{{ $admin->updated_at }}</td>
                                 @if($admin->is_super == 1)
-                                    <td></td>
+                                    <td>
+                                        超级管理员
+                                    </td>
                                 @else
                                 <td>
                                     <a href="/Admin/management/admin-management/Admin_edit_page" class="btn mg0 btn-primary btn-xs"><i class="fa fa-paste"></i>编辑</a>&nbsp;

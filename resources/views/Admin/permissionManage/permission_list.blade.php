@@ -26,7 +26,7 @@
                         <div class="col-sm-12">
                             <div class="col-sm-2" style="width: 100px">
                                 <div class="input-group">
-                                    <button data-toggle="modal" data-target="#adminadd" class="btn btn-outline btn-primary" type="button">添加权限</button>
+                                    <button data-toggle="modal" data-target="#permission_create" class="btn btn-outline btn-primary" type="button">添加权限</button>
                                 </div>
                             </div>
                         </div>
@@ -58,9 +58,59 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $permissions->links() }}
+                    <span class="pull-left">{{ $permissions->links() }}</span>
                 </div>
             </div>
+        </div>
+    </div>
+    {{--模态框--}}
+    <div class="modal fade" id="permission_create" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" style="width: 60%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="permission" method="post" action="/Admin/management/permission-management/permission_create">
+                        <input id="token" type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <label>权限规则 *</label>
+                                    <input id="name" name="name" type="text" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <label>权限名称</label>
+                                    <input id="display_name" name="display_name" type="text" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <label>权限描述</label>
+                                    <input id="description" name="description" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                提交
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            <!-- /.modal-content -->
+            </div>
+        <!-- /.modal -->
         </div>
     </div>
 @endsection
