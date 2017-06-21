@@ -206,7 +206,7 @@
                 {{--菜单栏--}}
                 <div class="sidebar-menu">
                     <ul class="nav nav-sidebar">
-                        <li>
+                        <li class=" {{ Request::is('Admin/dashboard') ? 'active' : '' }}">
                             <a href="/Admin/dashboard">
                                 <i class="fa fa-laptop"></i>
                                 <span class="text"> 仪表板</span>
@@ -218,20 +218,20 @@
                                 <span class="text"> 系统管理</span>
                                 <span class="fa fa-angle-down pull-right"></span>
                             </a>
-                            <ul class="nav sub">
-                                <li>
+                            <ul class="nav sub" style="display:{{ Request::is('Admin/system_manage/*') ? 'block' : 'none' }} " >
+                                <li class="{{ Request::is('Admin/system_manage/admin_manage/*') ? 'active' : '' }}">
                                     <a href="/Admin/system_manage/admin_manage/admin_list">
                                         <i class="fa fa-user"></i>
                                         <span class="text"> 管理员管理</span>
                                     </a>
                                 </li>
-                                <li>
+                                <li class="{{ Request::is('Admin/system_manage/role_manage/*') ? 'active' : '' }}">
                                     <a href="/Admin/system_manage/role_manage/role_list">
                                         <i class="fa fa-user-md"></i>
                                         <span class="text"> 角色管理</span>
                                     </a>
                                 </li>
-                                <li>
+                                <li class="{{ Request::is('Admin/system_manage/permission_manage/*') ? 'active' : '' }}">
                                     <a href="/Admin/system_manage/permission_manage/permission_list">
                                         <i class="fa fa-cog"></i>
                                         <span class="text"> 权限管理</span>

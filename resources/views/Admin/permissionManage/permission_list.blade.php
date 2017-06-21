@@ -18,4 +18,49 @@
             </ol>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-2" style="width: 100px">
+                                <div class="input-group">
+                                    <button data-toggle="modal" data-target="#adminadd" class="btn btn-outline btn-primary" type="button">添加权限</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover adminlist">
+                        <thead>
+                        <tr>
+                            <th>权限名称</th>
+                            <th>权限规则</th>
+                            <th>权限描述</th>
+                            <th>创建时间</th>
+                            <th>更新时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($permissions as $permission)
+                            <tr>
+                                <td>{{ $permission->permission_name }}</td>
+                                <td>{{ $permission->permission_url }}</td>
+                                <td>{{ $permission->description }}</td>
+                                <td>{{ $permission->created_at }}</td>
+                                <td>{{ $permission->updated_at }}</td>
+                                <td>
+                                    <a href="/Admin/management/admin-management/Admin_edit_page" class="btn mg0 btn-primary btn-xs"><i class="fa fa-paste"></i>编辑</a>&nbsp;
+                                    <a class="btn mg0 btn-danger btn-xs"><i class="fa fa-times"></i>删除</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                    {{ $permissions->links() }}
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

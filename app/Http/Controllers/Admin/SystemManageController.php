@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\User;
+use App\Model\permission;
 
 class SystemManageController extends Controller
 {
@@ -12,7 +14,8 @@ class SystemManageController extends Controller
         if($request->ajax()){
 
         }else{
-            return view('Admin.adminManage.admin_list');
+            $admins = User::paginate(3);
+            return view('Admin.adminManage.admin_list')->with('admins',$admins);
         }
     }
 //    角色管理
@@ -21,6 +24,7 @@ class SystemManageController extends Controller
     }
 //    权限管理
     public function permission_list(){
-        return view('Admin.permissionManage.permission_list');
+        $permissions = Permission::paginate(3);
+        return view('Admin.permissionManage.permission_list')->with('permissions',$permissions);
     }
 }

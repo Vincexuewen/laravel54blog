@@ -36,7 +36,6 @@
                     <tr>
                         <th>管理员名称</th>
                         <th>邮箱</th>
-                        <th>创建者</th>
                         <th>状态</th>
                         <th>创建时间</th>
                         <th>更新时间</th>
@@ -44,8 +43,32 @@
                     </tr>
                     </thead>
                     <tbody>
+                        @foreach($admins as $admin)
+                            <tr>
+                                <td>{{ $admin->username }}</td>
+                                <td>{{ $admin->email }}</td>
+                                <td>
+                                    @if($admin->status == 1)
+                                        <span class="label label-info">开启</span>
+                                    @else
+                                        <span class="label label-fail">禁用</span>
+                                    @endif
+                                </td>
+                                <td>{{ $admin->created_at }}</td>
+                                <td>{{ $admin->updated_at }}</td>
+                                @if($admin->is_super == 1)
+                                    <td></td>
+                                @else
+                                <td>
+                                    <a href="/Admin/management/admin-management/Admin_edit_page" class="btn mg0 btn-primary btn-xs"><i class="fa fa-paste"></i>编辑</a>&nbsp;
+                                    <a class="btn mg0 btn-danger btn-xs"><i class="fa fa-times"></i>删除</a>
+                                </td>
+                                @endif
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                {{ $admins->links() }}
             </div>
         </div>
         </div>
