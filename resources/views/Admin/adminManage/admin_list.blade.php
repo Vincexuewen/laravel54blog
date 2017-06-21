@@ -8,20 +8,46 @@
 ?>
 @extends('Admin.Layout.layout')
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-10">
-            <h2>管理员管理</h2>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-cogs"></i> 系统管理</h3>
             <ol class="breadcrumb">
-                <li>
-                    <a href="/Admin/dashboard">主页</a>
-                </li>
-                <li class="active">
-                    <strong>管理员列表</strong>
-                </li>
+                <li><i class="fa fa-home"></i><a href="index.html">主页</a></li>
+                <li><i class="fa fa-cogs"></i>系统管理</li>
+                <li><i class="fa fa-user"></i>管理员管理</li>
             </ol>
         </div>
-        <div class="col-lg-2">
-
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2" style="width: 100px">
+                            <div class="input-group">
+                                <button data-toggle="modal" data-target="#adminadd" class="btn btn-outline btn-primary" type="button">添加管理员</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover adminlist">
+                    <thead>
+                    <tr>
+                        <th>管理员名称</th>
+                        <th>邮箱</th>
+                        <th>创建者</th>
+                        <th>状态</th>
+                        <th>创建时间</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         </div>
     </div>
 @endsection

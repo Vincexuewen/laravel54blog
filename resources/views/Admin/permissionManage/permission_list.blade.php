@@ -8,20 +8,14 @@
 ?>
 @extends('Admin.Layout.layout')
 @section('content')
-    <div class="row wrapper border-bottom white-bg page-heading">
-        <div class="col-lg-10">
-            <h2>权限管理</h2>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-cogs"></i> 系统管理</h3>
             <ol class="breadcrumb">
-                <li>
-                    <a href="/Admin/dashboard">主页</a>
-                </li>
-                <li class="active">
-                    <strong>权限列表</strong>
-                </li>
+                <li><i class="fa fa-home"></i><a href="index.html">主页</a></li>
+                <li><i class="fa fa-cogs"></i>系统管理</li>
+                <li><i class="fa fa-cog"></i>权限管理</li>
             </ol>
-        </div>
-        <div class="col-lg-2">
-
         </div>
     </div>
 @endsection
