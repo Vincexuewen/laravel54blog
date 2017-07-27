@@ -10,18 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'web'],function(){
+    // 博客项目
+    Route::group(['domain' => 'blog.project.com'],function (){
+        include __DIR__ ."/blog/route_blog.php";
+    });
 });
 
-Route::get('/login','Admin\LoginController@showloginform');
-Route::post('/login',['as' => 'login','uses' => 'Admin\LoginController@login']);
-Route::get('/register','Admin\RegisterController@showregisterform');
-Route::post('/register',['as' => 'register','uses' => 'Admin\RegisterController@register']);
 
-//后台主页
-Route::get('/Admin/dashboard','Admin\HomeController@dashboard');
+
 /*
  * 系统管理
  * */
@@ -33,4 +30,7 @@ Route::post('/Admin/system_manage/admin_manage/admin_list','Admin\SystemManageCo
 //角色管理
 Route::get('/Admin/system_manage/role_manage/role_list','Admin\SystemManageController@role_list');
 //权限管理
+//列表
 Route::get('/Admin/system_manage/permission_manage/permission_list','Admin\SystemManageController@permission_list');
+//添加
+Route::post('/Admin/system_manage/permission_manage/permission_create','Admin\SystemManageController@permission_create');
