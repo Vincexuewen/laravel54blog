@@ -10,6 +10,6 @@ class blogController extends Controller
     //
     //首页
     public function index(){
-        return view('Blog.Reception.Layout.layout');
+        return view('Blog.Reception.Home.home');
     }
 }
