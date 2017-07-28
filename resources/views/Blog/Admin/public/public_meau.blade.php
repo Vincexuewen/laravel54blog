@@ -10,7 +10,7 @@
     <!-- start: MAIN NAVIGATION MENU -->
     <ul class="main-navigation-menu">
         <li class="active open">
-            <a href="index.html">
+            <a href="/admin/dashboard">
                 <div class="item-content">
                     <div class="item-media">
                         <i class="fa fa-home"></i>
@@ -27,12 +27,12 @@
                         <i class="fa fa-clone"></i>
                     </div>
                     <div class="item-inner">
-                        <span class="title"> Page Layouts </span><i class="icon-arrow"></i>
+                        <span class="title"> 内容管理 </span><i class="icon-arrow"></i>
                     </div>
                 </div> </a>
             <ul class="sub-menu">
                 <li>
-                    <a href="page_layouts_fixed_header.html"> <span class="title"> Fixed Header </span> </a>
+                    <a href="/admin/Content-Manage/Article-Manage"> <span class="title"> 文章管理 </span> </a>
                 </li>
                 <li>
                     <a href="page_layouts_fixed_sidebar.html"> <span class="title"> Fixed Sidebar </span> </a>

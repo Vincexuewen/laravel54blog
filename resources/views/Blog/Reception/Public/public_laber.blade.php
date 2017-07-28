@@ -21,7 +21,5 @@
             </ul>
         </li>
     </ul>
-    <a data-toggle="modal" data-target="#loginModal" class="login" rel="nofollow">Hi,请登录</a>&nbsp;&nbsp;
-    <a href="javascript:;" class="register" rel="nofollow">我要注册</a>&nbsp;&nbsp;
-    <a href="" rel="nofollow">找回密码</a>
+    <p>上午好，现在是：2017年7月28日 星期五</p>
 </div>

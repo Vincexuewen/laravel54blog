@@ -6,8 +6,8 @@
  * Time: 17:06
  */
 ?>
-<article class="excerpt excerpt-1">
-    <a class="focus" href="article.html" title="">
+<article class="excerpt" style="margin-bottom: 1%;">
+    <a class="focus" href="" title="">
         <img class="thumb" data-original="/blog/reception/images/excerpt.jpg" src="/blog/reception/images/excerpt.jpg" alt="">
     </a>
     <header>
@@ -17,11 +17,12 @@
         </h2>
     </header>
     <p class="meta">
-        <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
-        <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共120人围观</span>
-        <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a>
+        <time class="time" title="发布时间"><i class="glyphicon glyphicon-time"></i> 2016年01月04日</time>
+        <span class="views" title="浏览量"><i class="glyphicon glyphicon-eye-open"></i> 阅读</span>
+        <a class="comment" href="" title="评论"><i class="glyphicon glyphicon-comment"></i> 评论</a>
     </p>
-    <p class="note">
+    <p class="note" style="font-size: 14px;height: 60px;">
         可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ...
     </p>
+    <span class="pull-right"><a><button type="button" class="btn btn-primary">阅读全文</button></a></span>
 </article>

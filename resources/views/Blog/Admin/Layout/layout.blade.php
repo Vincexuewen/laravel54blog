@@ -14,8 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta content="" name="description" />
-    <meta content="" name="author" />
+    <meta name="_token" content="{{ csrf_token() }}"/>
     <!-- end: META -->
     <!-- start: MAIN CSS -->
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -35,8 +34,11 @@
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/assets/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/assets/css/themes/lyt2-theme-1.css') }}">
     <!-- end: Packet CSS -->
+    <link rel="stylesheet" href="{{ URL::asset('plugins/sweetalert/sweetalert.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('plugins/DataTables/media/css/dataTables.bootstrap.min.css') }}">
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" />
+    @yield('my-css')
 </head>
 <!-- end: HEAD -->
 <body>
@@ -91,12 +93,17 @@
 <!-- end: Packet JAVASCRIPTS -->
 <!-- start: JavaScript Event Handlers for this page -->
 <script src="{{ URL::asset('blog/admin/assets/js/index.js') }}"></script>
+<script src="{{ URL::asset('plugins/sweetalert/sweetalert.min.js') }}"></script>
+<script src="{{ URL::asset('plugins/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('plugins/DataTables/media/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ URL::asset('blog/js/add.js') }}"></script>
 <script>
     jQuery(document).ready(function() {
         Main.init();
         Index.init();
     });
 </script>
+@yield('my-js')
 <!-- end: JavaScript Event Handlers for this page -->
 </body>
 </html>

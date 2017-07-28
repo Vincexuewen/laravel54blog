@@ -33,7 +33,7 @@ class RegisterController extends Controller
         ]);
 //        判断是否插入成功并返回登录界面
         if($res){
-            return redirect()->route('showloginform')->withSuccess('注册成功！');
+            return redirect()->route('showloginform')->withsuccess('注册成功！');
         }else{
             abort(500);
         }
