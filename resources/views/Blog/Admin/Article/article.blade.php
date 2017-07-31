@@ -64,8 +64,8 @@
                 <tr>
                     <td>{{ $article->ar_id }}</td>
                     <td>{{ $article->ar_title }}</td>
-                    <td style="text-align: center"><img width="60%" height="6%" src="/{{ $article->ar_img_url }}" /></td>
-                    <td>{{ $article->ar_class_id }}</td>
+                    <td style="text-align: center"><img width="100px" height="30px" src="/{{ $article->ar_img_url }}" /></td>
+                    <td>{{ $article->ar_class_name }}</td>
                     <td>{{ $article->ar_hits }}</td>
                     <td>{{ $article->created_at }}</td>
                     <td>{{ $article->updated_at }}</td>
@@ -102,4 +102,5 @@
             });
         });
     </script>
+    @include('partial.success')
 @endsection

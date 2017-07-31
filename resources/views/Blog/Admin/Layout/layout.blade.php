@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/assets/css/styles.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/assets/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/assets/css/themes/lyt2-theme-1.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('blog/admin/bower_components/toastr/toastr.min.css') }}">
     <!-- end: Packet CSS -->
     <link rel="stylesheet" href="{{ URL::asset('plugins/sweetalert/sweetalert.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('plugins/DataTables/media/css/dataTables.bootstrap.min.css') }}">
@@ -90,6 +91,7 @@
 <!-- start: Packet JAVASCRIPTS -->
 <script src="{{ URL::asset('blog/admin/assets/js/letter-icons.js') }}"></script>
 <script src="{{ URL::asset('blog/admin/assets/js/main.js') }}"></script>
+<script src="{{ URL::asset('blog/admin/bower_components/toastr/toastr.min.js') }}"></script>
 <!-- end: Packet JAVASCRIPTS -->
 <!-- start: JavaScript Event Handlers for this page -->
 <script src="{{ URL::asset('blog/admin/assets/js/index.js') }}"></script>

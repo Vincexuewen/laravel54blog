@@ -22,6 +22,9 @@ function del(obj,id,url) {
                     data: {
                         id: id
                     },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    },
                     dataType: 'JSON',
                     success: function(res) {
                         if(res.code == 200) {

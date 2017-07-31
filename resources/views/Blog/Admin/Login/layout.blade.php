@@ -6,14 +6,14 @@
     {{--bootstrap3.3.7-main(START)--}}
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('/bootstrap/css/bootstrap.min.css') }}">
     {{--END--}}
-    <link rel="stylesheet" href="{{ URL::asset('static/admin/bower_components/toastr/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('blog/admin/bower_components/toastr/toastr.min.css') }}">
     {{--Jquery3.2.1(START)--}}
     <script src="{{ URL::asset('/js/jquery/jquery-3.2.1.min.js') }}"></script>
     {{--END--}}
     {{--bootstrap3.3.7-main(START)--}}
     <script src="{{ URL::asset('/bootstrap/js/bootstrap.min.js') }}"></script>
     {{--END--}}
-    <script src="{{ URL::asset('static/admin/bower_components/toastr/toastr.min.js') }}"></script>
+    <script src="{{ URL::asset('blog/admin/bower_components/toastr/toastr.min.js') }}"></script>
 </head>
 <body>
 <div>

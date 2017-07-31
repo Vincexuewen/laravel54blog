@@ -9,7 +9,7 @@
 <nav>
     <!-- start: MAIN NAVIGATION MENU -->
     <ul class="main-navigation-menu">
-        <li class="active open">
+        <li class="{{ Request::is('admin/dashboard') ? 'active open' : '' }}">
             <a href="/admin/dashboard">
                 <div class="item-content">
                     <div class="item-media">
@@ -20,7 +20,7 @@
                     </div>
                 </div> </a>
         </li>
-        <li>
+        <li class="{{ Request::is('admin/Content-Manage/Article-Manage*') ? 'active open' : '' }}">
             <a href="javascript:void(0)">
                 <div class="item-content">
                     <div class="item-media">
@@ -31,7 +31,7 @@
                     </div>
                 </div> </a>
             <ul class="sub-menu">
-                <li>
+                <li class="{{ Request::is('admin/Content-Manage/Article-Manage*') ? 'active open' : '' }}">
                     <a href="/admin/Content-Manage/Article-Manage"> <span class="title"> 文章管理 </span> </a>
                 </li>
                 <li>

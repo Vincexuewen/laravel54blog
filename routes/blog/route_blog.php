@@ -18,12 +18,16 @@ Route::group(['prefix' => 'admin'],function (){
         //后台主页
         Route::get('/dashboard',['as' => 'dashaboard', 'uses' => 'Blog\Admin\HomeController@dashboard']);
         //文章管理
-        Route::get('/Content-Manage/Article-Manage','Blog\Admin\ArticleController@index');
-        //文章创建
-        Route::any('/Content-Manage/Article-Manage/create','Blog\Admin\ArticleController@create');
-        //文章编辑
-        Route::any('/Content-Manage/Article-Manage/edit/{id}','Blog\Admin\ArticleController@edit')->where('id','[0-9]+');
-        //文章删除
-        Route::post('/Content-Manage/Article-Manage/delete','Blog\Admin\ArticleController@delete');
+        Route::group(['prefix' => '/Content-Manage/Article-Manage'],function (){
+            //文章列表
+            Route::get('/','Blog\Admin\ArticleController@index');
+            //文章创建
+            Route::any('/create','Blog\Admin\ArticleController@create');
+            //文章编辑
+            Route::any('/edit/{id}','Blog\Admin\ArticleController@edit')->where('id','[0-9]+');
+            //文章删除
+            Route::post('/delete','Blog\Admin\ArticleController@delete');
+        });
+
     });
 });
