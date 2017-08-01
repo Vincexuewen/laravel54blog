@@ -8,15 +8,18 @@
 ?>
 <div class="widget widget_hot">
     <h3>热门文章</h3>
-    <ul>
-        <li>
-            <a href="">
-                <span class="thumbnail">
-                    <img class="thumb" data-original="/blog/reception/images/excerpt.jpg" src="/blog/reception/images/excerpt.jpg" alt="">
-                </span>
-                <span class="text">php如何判断一个日期的格式是否正确</span>
-                <span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span>
-                <span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a>
-        </li>
-    </ul>
+    @foreach($articles_hot as $article_hot)
+        <ul>
+            <li>
+                <a href="/{{ $article_hot->ar_id }}">
+                    <span class="thumbnail">
+                        <img class="thumb" data-original="/{{ $article_hot->ar_img_url }}" src="/{{ $article_hot->ar_img_url }}" alt="">
+                    </span>
+                    <span class="text">{{ $article_hot->ar_title }}</span>
+                    <span class="muted"><i class="glyphicon glyphicon-time"></i> {{ $article_hot->created_at }} </span>
+                    <span class="muted"><i class="glyphicon glyphicon-eye-open"></i> {{ $article_hot->ar_hits }}</span>
+                </a>
+            </li>
+        </ul>
+    @endforeach
 </div>

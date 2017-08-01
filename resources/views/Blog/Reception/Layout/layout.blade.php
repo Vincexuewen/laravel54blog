@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('blog/reception/css/font-awesome.min.css') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ URL::asset('blog/reception//blog/reception/images/icon/icon.png') }}">
     <link rel="shortcut icon" href="{{ URL::asset('blog/reception//blog/reception/images/icon/favicon.ico') }}">
+    @yield('css')
     <script src="{{ URL::asset('blog/reception/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ URL::asset('blog/reception/js/nprogress.js') }}"></script>
     <script src="{{ URL::asset('blog/reception/js/jquery.lazyload.min.js') }}"></script>
@@ -47,6 +48,7 @@
         </div>
     </nav>
 </header>
+@yield('header')
 <section class="container">
     {{--左侧内容--}}
     <div class="content-wrap">
@@ -121,7 +123,6 @@
     </div>
 </div>
 <script src="{{ URL::asset('blog/reception/js/bootstrap.min.js') }}"></script>
-<script src="{{ URL::asset('blog/reception/js/jquery.ias.js') }}"></script>
 <script src="{{ URL::asset('blog/reception/js/scripts.js') }}"></script>
 </body>
 </html>

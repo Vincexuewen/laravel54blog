@@ -11,7 +11,7 @@
         <p>&copy; 2016
             <a href="">ylsat.com</a> &nbsp;
             <a href="#" target="_blank" rel="nofollow">豫ICP备20151109-1</a> &nbsp; &nbsp;
-            <a href="http://www.mycodes.net/" target="_blank">{{ $sitename }}源码之家</a>
+            <a href="http://www.mycodes.net/" target="_blank">源码之家</a>
         </p>
     </div>
     <div id="gotop"><a class="gotop"></a></div>

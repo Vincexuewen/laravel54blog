@@ -8,11 +8,11 @@
 ?>
 <div class="collapse navbar-collapse" id="header-navbar">
     <ul class="nav navbar-nav navbar-right">
-        <li class="hidden-index active"><a data-cont="异清轩首页" href="index.html">异清轩首页</a></li>
-        <li><a href="category.html">前端技术</a></li>
-        <li><a href="category.html">后端程序</a></li>
-        <li><a href="category.html">管理系统</a></li>
-        <li><a href="category.html">授人以渔</a></li>
-        <li><a href="category.html">程序人生</a></li>
+        <li class="hidden-index active"><a data-cont="异清轩首页" href="/">异清轩首页</a></li>
+        <li><a href="/Web">前端技术</a></li>
+        <li><a href="/Program">后端程序</a></li>
+        <li><a href="/share">资源分享</a></li>
+        <li><a href="/d">授人以渔</a></li>
+        <li><a href="/message">留言板</a></li>
     </ul>
 </div>

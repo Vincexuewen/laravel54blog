@@ -7,6 +7,9 @@
  */
 //博客前端
 Route::get('/',['as' => 'reception','uses' => 'Blog\Reception\blogController@index']);
+//文章内容显示
+Route::get('/{id}','Blog\Reception\blogController@article')->where('id','[0-9]+');
+Route::get('/{name}','Blog\Reception\blogController@articles_type')->where('name','[a-zA-Z]+');
 //博客后台
 Route::group(['prefix' => 'admin'],function (){
     Route::get('/login',['as' => 'showloginform','uses' => 'Blog\Admin\LoginController@showloginform']);
