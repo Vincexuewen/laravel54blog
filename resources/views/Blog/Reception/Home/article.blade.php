@@ -31,7 +31,7 @@
                 </span>
                 <span class="item article-meta-category" data-toggle="tooltip" data-placement="bottom" title="类别">
           	        <i class="glyphicon glyphicon-list"></i>
-          	        <a>{{ $article->ar_class_name }}</a>
+          	        <a>{{ $article->articles_class->ar_class_name }}</a>
                 </span>
                 <span class="item article-meta-views" data-toggle="tooltip" data-placement="bottom" title="点击量">
           	        <i class="glyphicon glyphicon-eye-open"></i> {{ $article->ar_hits }}

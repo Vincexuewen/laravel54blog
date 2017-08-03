@@ -10,8 +10,10 @@ Route::get('/',['as' => 'reception','uses' => 'Blog\Reception\blogController@ind
 //文章内容显示
 Route::get('/{id}','Blog\Reception\blogController@article')->where('id','[0-9]+');
 Route::get('/{name}','Blog\Reception\blogController@articles_type')->where('name','[a-zA-Z]+');
+Route::get('/{name}/{name2}','Blog\Reception\blogController@articles_type2')->where('name2','[a-zA-Z]+');
+Route::get('/Message.html','Blog\Reception\blogController@message');
 //博客后台
-Route::group(['prefix' => 'admin'],function (){
+Route::group(['prefix' => 'blog/admin'],function (){
     Route::get('/login',['as' => 'showloginform','uses' => 'Blog\Admin\LoginController@showloginform']);
     Route::post('/login',['as' => 'login','uses' => 'Blog\Admin\LoginController@login']);
     Route::get('/register',['as' => 'showregisterform','uses' => 'Blog\Admin\RegisterController@showregisterform']);
@@ -30,6 +32,17 @@ Route::group(['prefix' => 'admin'],function (){
             Route::any('/edit/{id}','Blog\Admin\ArticleController@edit')->where('id','[0-9]+');
             //文章删除
             Route::post('/delete','Blog\Admin\ArticleController@delete');
+        });
+        //轮播图管理
+        Route::group(['prefix' => '/Content-Manage/Banner-Manage'],function (){
+            //轮播图列表
+            Route::get('/','Blog\Admin\BannerController@index');
+            //轮播图添加
+            Route::post('/create','Blog\Admin\BannerController@create');
+            //轮播图编辑
+            Route::any('/edit/{id}','Blog\Admin\BannerController@edit')->where('id','[0-9]+');
+            //轮播图删除
+            Route::post('/delete','Blog\Admin\BannerController@delete');
         });
 
     });

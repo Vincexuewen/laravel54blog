@@ -12,7 +12,7 @@
                     </ul>
                 </div>
             @endif
-            <form class="form-horizontal" role="form" method="POST" action="/admin/login">
+            <form class="form-horizontal" role="form" method="POST" action="/blog/admin/login">
                 {{ csrf_field() }}
             <div class="form-group">
                 <label for="email" class="col-md-4 control-label">邮箱</label>

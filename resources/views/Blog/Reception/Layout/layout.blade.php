@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('blog/reception/css/font-awesome.min.css') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ URL::asset('blog/reception//blog/reception/images/icon/icon.png') }}">
     <link rel="shortcut icon" href="{{ URL::asset('blog/reception//blog/reception/images/icon/favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('blog/reception/css/addcss.css') }}">
     @yield('css')
     <script src="{{ URL::asset('blog/reception/js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ URL::asset('blog/reception/js/nprogress.js') }}"></script>
@@ -29,9 +30,6 @@
     <script src="{{ URL::asset('blog/reception/js/html5shiv.min.js') }}" type="text/javascript"></script>
     <script src="{{ URL::asset('blog/reception/js/respond.min.js') }}" type="text/javascript"></script>
     <script src="{{ URL::asset('blog/reception/js/selectivizr-min.js') }}" type="text/javascript"></script>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <script>window.location.href='upgrade-browser.html';</script>
     <![endif]-->
 </head>
 
@@ -124,5 +122,36 @@
 </div>
 <script src="{{ URL::asset('blog/reception/js/bootstrap.min.js') }}"></script>
 <script src="{{ URL::asset('blog/reception/js/scripts.js') }}"></script>
+<script>
+    window.onload=function () {
+        var myDate = new Date();
+        var year = myDate.getFullYear();
+        var month = myDate.getMonth()+1;
+        var day = myDate.getDate();
+        var week = myDate.getDay();
+        var hour = myDate.getHours();
+        //判断星期几
+        var weeks = ["日","一","二","三","四","五","六"];
+        var getWeek = "星期" + weeks[week];
+        var msg = '';
+        if(month < 10){
+            month = '0'+month;
+        }
+        if(day < 10){
+            day = '0'+day;
+        }
+        if(6 < hour < 11){
+            msg = '上午好！';
+        }else if(11 <= hour <= 13){
+            msg = '中午好！';
+        }else if(13 < hour < 23){
+            msg = '晚上好！';
+        }else{
+            msg = '凌晨好！';
+        }
+        var message = msg+'现在是：'+year+'年'+month+'月'+day+'日 '+getWeek;
+        $('.addtime').html(message);
+    }
+</script>
 </body>
 </html>

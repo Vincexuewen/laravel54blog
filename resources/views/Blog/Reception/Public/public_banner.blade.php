@@ -8,23 +8,17 @@
 ?>
 <div id="focusslide" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#focusslide" data-slide-to="0" class="active"></li>
-        <li data-target="#focusslide" data-slide-to="1"></li>
-        <li data-target="#focusslide" data-slide-to="2"></li>
+        @foreach($banners as $k=>$banner)
+        <li data-target="#focusslide" data-slide-to="{{ $k }}" class="{{ $k ? '' : 'active' }}"></li>
+        @endforeach
     </ol>
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <a href="" target="_blank"><img src="/blog/reception/images/banner/banner_01.jpg" alt="" class="img-responsive"></a>
-            <!--<div class="carousel-caption"> </div>-->
-        </div>
-        <div class="item">
-            <a href="" target="_blank"><img src="/blog/reception/images/banner/banner_02.jpg" alt="" class="img-responsive"></a>
-            <!--<div class="carousel-caption"> </div>-->
-        </div>
-        <div class="item">
-            <a href="" target="_blank"><img src="/blog/reception/images/banner/banner_03.jpg" alt="" class="img-responsive"></a>
-            <!--<div class="carousel-caption"> </div>-->
-        </div>
+        @foreach($banners as $k=>$banner)
+            <div class="item {{ $k ? '' : 'active' }}">
+                <a><img src="/{{ $banner->banner_url }}" alt="" class="img-responsive"></a>
+                <!--<div class="carousel-caption"> </div>-->
+            </div>
+        @endforeach
     </div>
     <a class="left carousel-control" href="#focusslide" role="button" data-slide="prev" rel="nofollow">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

@@ -8,11 +8,10 @@
 ?>
 <div class="collapse navbar-collapse" id="header-navbar">
     <ul class="nav navbar-nav navbar-right">
-        <li class="hidden-index active"><a data-cont="异清轩首页" href="/">异清轩首页</a></li>
-        <li><a href="/Web">前端技术</a></li>
-        <li><a href="/Program">后端程序</a></li>
-        <li><a href="/share">资源分享</a></li>
-        <li><a href="/d">授人以渔</a></li>
-        <li><a href="/message">留言板</a></li>
+        <li class="{{ Request::is('/') ? 'active' : '' }}"><a data-cont="首页" href="/">首页</a></li>
+        @foreach($meaus as $meau)
+            <li class="{{ Request::is($meau->ar_class_name.'*') ? 'active' : '' }}"><a href="/{{ $meau->ar_class_name }}">{{ $meau->c_name }}</a></li>
+        @endforeach
+        <li class="{{ Request::is('/message.html') ? 'active' : '' }}"><a href="/Message.html">留言板</a></li>
     </ul>
 </div>

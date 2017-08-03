@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/bower_components/ladda/dist/ladda-themeless.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/bower_components/slick.js/slick/slick.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/bower_components/slick.js/slick/slick-theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('blog/reception/css/addcss.css') }}">
     <!-- end: MAIN CSS -->
     <!-- start: Packet CSS -->
     <link rel="stylesheet" href="{{ URL::asset('blog/admin/assets/css/styles.css') }}">

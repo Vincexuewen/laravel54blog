@@ -15,7 +15,10 @@ class CreateBlogArticlesClassTable extends Migration
     {
         Schema::create('blog_articles_class', function (Blueprint $table) {
             $table->increments('ar_class_id')->comment('分类id');
+            $table->integer('parent_id')->commemt('父id');
             $table->string('ar_class_name')->unique()->comment('分类名');
+            $table->string('c_name')->comment('中文名称');
+            $table->integer('type')->comment('代表分类级别');
             $table->timestamps();
         });
     }

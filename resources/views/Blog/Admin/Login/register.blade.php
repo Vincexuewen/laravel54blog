@@ -4,7 +4,7 @@
         <div class="panel-heading">注册</div>
         <div class="panel-body">
             @include('partial.error')
-            <form class="form-horizontal" role="form" method="POST" action="/admin/register">
+            <form class="form-horizontal" role="form" method="POST" action="/blog/admin/register">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="username" class="col-md-4 control-label">用户名</label>

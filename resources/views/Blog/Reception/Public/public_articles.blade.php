@@ -14,7 +14,7 @@
     <header>
         <a class="cat" href="program">{{ $article->ar_class_name }}</a>
         <h2>
-            <a href="article.html" title="">{{ $article->ar_title }}</a>
+            <a href="/{{ $article->ar_id }}" title="">{{ $article->ar_title }}</a>
         </h2>
     </header>
     <p class="meta">

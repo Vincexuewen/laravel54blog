@@ -21,10 +21,10 @@
         <h4 class="mainTitle no-margin">文章管理</h4>
         <ul class="pull-right breadcrumb">
             <li>
-                <a href="/admin/dashboard"><i class="fa fa-home margin-right-5 text-large text-dark"></i>主页</a>
+                <a href="/blog/admin/dashboard"><i class="fa fa-home margin-right-5 text-large text-dark"></i>主页</a>
             </li>
             <li>
-                <a href="/admin/Content-Manage/Article-Manage"><i class="fa fa-book margin-right-5 text-large text-dark"></i>文章列表</a>
+                <a href="/blog/admin/Content-Manage/Article-Manage"><i class="fa fa-book margin-right-5 text-large text-dark"></i>文章列表</a>
             </li>
             <li>
                 文章编辑
@@ -38,7 +38,7 @@
                 <div class="panel panel-white">
                     <div class="panel-body">
                         @include('partial.error')
-                        <form role="form" method="post" enctype="multipart/form-data" action="/admin/Content-Manage/Article-Manage/edit/{{ $article->ar_id }}">
+                        <form role="form" method="post" enctype="multipart/form-data" action="/blog/admin/Content-Manage/Article-Manage/edit/{{ $article->ar_id }}">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label> 文章标题<span class="symbol required"></span></label>

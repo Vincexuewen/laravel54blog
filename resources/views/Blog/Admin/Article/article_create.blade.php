@@ -30,7 +30,7 @@
                 <div class="panel panel-white">
                     <div class="panel-body">
                         @include('partial.error')
-                        <form role="form" method="post" enctype="multipart/form-data" action="/admin/Content-Manage/Article-Manage/create">
+                        <form role="form" method="post" enctype="multipart/form-data" action="/blog/admin/Content-Manage/Article-Manage/create">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label> 文章标题<span class="symbol required"></span></label>

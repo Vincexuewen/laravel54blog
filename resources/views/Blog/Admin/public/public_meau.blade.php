@@ -9,8 +9,8 @@
 <nav>
     <!-- start: MAIN NAVIGATION MENU -->
     <ul class="main-navigation-menu">
-        <li class="{{ Request::is('admin/dashboard') ? 'active open' : '' }}">
-            <a href="/admin/dashboard">
+        <li class="{{ Request::is('blog/admin/dashboard') ? 'active open' : '' }}">
+            <a href="/blog/admin/dashboard">
                 <div class="item-content">
                     <div class="item-media">
                         <i class="fa fa-home"></i>
@@ -20,7 +20,7 @@
                     </div>
                 </div> </a>
         </li>
-        <li class="{{ Request::is('admin/Content-Manage/Article-Manage*') ? 'active open' : '' }}">
+        <li class="{{ Request::is('blog/admin/Content-Manage*') ? 'active open' : '' }}">
             <a href="javascript:void(0)">
                 <div class="item-content">
                     <div class="item-media">
@@ -31,11 +31,11 @@
                     </div>
                 </div> </a>
             <ul class="sub-menu">
-                <li class="{{ Request::is('admin/Content-Manage/Article-Manage*') ? 'active open' : '' }}">
-                    <a href="/admin/Content-Manage/Article-Manage"> <span class="title"> 文章管理 </span> </a>
+                <li class="{{ Request::is('blog/admin/Content-Manage/Article-Manage*') ? 'active open' : '' }}">
+                    <a href="/blog/admin/Content-Manage/Article-Manage"> <span class="title"> 文章管理 </span> </a>
                 </li>
-                <li>
-                    <a href="page_layouts_fixed_sidebar.html"> <span class="title"> Fixed Sidebar </span> </a>
+                <li class="{{ Request::is('blog/admin/Content-Manage/Banner-Manage*') ? 'active open' : '' }}">
+                    <a href="/blog/admin/Content-Manage/Banner-Manage"> <span class="title"> 轮播图管理 </span> </a>
                 </li>
                 <li>
                     <a href="page_layouts_fixed_header_sidebar.html"> <span class="title"> Fixed Header &amp; Sidebar </span> </a>

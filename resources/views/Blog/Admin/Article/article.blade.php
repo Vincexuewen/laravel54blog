@@ -7,24 +7,13 @@
  */
 ?>
 @extends('Blog.Admin.Layout.layout')
-@section('my-css')
-   <style>
-       img{
-           cursor: pointer;
-           transition: all 0.6s;
-       }
-       img:hover{
-           transform: scale(3);
-       }
-   </style>
-@endsection
 @section('content')
     <!-- start: BREADCRUMB -->
     <div class="breadcrumb-wrapper">
         <h4 class="mainTitle no-margin">文章管理</h4>
         <ul class="pull-right breadcrumb">
             <li>
-                <a href="/admin/dashboard"><i class="fa fa-home margin-right-5 text-large text-dark"></i>主页</a>
+                <a href="/blog/admin/dashboard"><i class="fa fa-home margin-right-5 text-large text-dark"></i>主页</a>
             </li>
             <li>
                 文章列表
@@ -38,7 +27,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12 space20">
-                    <a href="/admin/Content-Manage/Article-Manage/create">
+                    <a href="/blog/admin/Content-Manage/Article-Manage/create">
                         <button class="btn btn-green add-row">
                             <i class="fa fa-plus"></i>&nbsp;&nbsp;发布文章
                         </button>
@@ -64,7 +53,7 @@
                 <tr>
                     <td>{{ $article->ar_id }}</td>
                     <td>{{ $article->ar_title }}</td>
-                    <td style="text-align: center"><img width="100px" height="30px" src="/{{ $article->ar_img_url }}" /></td>
+                    <td style="text-align: center"><img class="v-img" src="/{{ $article->ar_img_url }}" /></td>
                     <td>{{ $article->ar_class_name }}</td>
                     <td>{{ $article->ar_hits }}</td>
                     <td>{{ $article->created_at }}</td>
@@ -77,8 +66,8 @@
                         @endif
                     </td>
                     <td>
-                        <a href="/admin/Content-Manage/Article-Manage/edit/{{$article->ar_id}}" class="btn mg0 btn-green btn-xs"><i class="fa fa-paste"></i>编辑</a>&nbsp;
-                        <a onclick="del(this,{{ $article->ar_id }},'/admin/Content-Manage/Article-Manage/delete')" class="btn mg0 btn-danger btn-xs J_del"><i class="fa fa-times"></i>删除</a>
+                        <a href="/blog/admin/Content-Manage/Article-Manage/edit/{{$article->ar_id}}" class="btn mg0 btn-green btn-xs"><i class="fa fa-paste"></i>编辑</a>&nbsp;
+                        <a onclick="del(this,{{ $article->ar_id }},'/blog/admin/Content-Manage/Article-Manage/delete')" class="btn mg0 btn-danger btn-xs J_del"><i class="fa fa-times"></i>删除</a>
                     </td>
                 </tr>
                 @endforeach

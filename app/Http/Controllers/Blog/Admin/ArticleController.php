@@ -42,7 +42,7 @@ class ArticleController extends Controller
                 $data['ar_content'] = $request->input('content');
                 $result = Articles::create($data);
                 if($result){
-                    return redirect('/admin/Content-Manage/Article-Manage')->withsuccess('文章发布成功！');
+                    return redirect('/blog/admin/Content-Manage/Article-Manage')->withsuccess('文章发布成功！');
                 }else{
                     return Redirect::back()->withInput()->withErrors('文章发布失败，请重新操作！');
                 }
@@ -50,7 +50,8 @@ class ArticleController extends Controller
                 return Redirect::back()->withInput()->withErrors('文章发布失败，请重新操作！');
             }
         }
-        $articles_class = Articles_class::all();
+        //获取1级分类
+        $articles_class = Articles_class::where('type',1)->get();
         return view('Blog.Admin.Article.article_create',compact('articles_class'));
     }
     //文章编辑
@@ -72,7 +73,7 @@ class ArticleController extends Controller
                     $article->ar_img_url = $this->path.$newFileName;
                     $res = $article->save();
                     if($res){
-                        return redirect('/admin/Content-Manage/Article-Manage')->withsuccess('文章编辑成功！');
+                        return redirect('/blog/admin/Content-Manage/Article-Manage')->withsuccess('文章编辑成功！');
                     }else{
                         return Redirect::back()->withInput()->withErrors('文章编辑失败，请重新操作！');
                     }
@@ -89,7 +90,7 @@ class ArticleController extends Controller
                 ])->validate();
                 $res = $article->save();
                 if($res){
-                    return redirect('/admin/Content-Manage/Article-Manage')->withsuccess('文章编辑成功！');
+                    return redirect('/blog/admin/Content-Manage/Article-Manage')->withsuccess('文章编辑成功！');
                 }else{
                     return Redirect::back()->withInput()->withErrors('文章编辑失败，请重新操作！');
                 }
