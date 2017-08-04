@@ -37,14 +37,21 @@
                 <li class="{{ Request::is('blog/admin/Content-Manage/Banner-Manage*') ? 'active open' : '' }}">
                     <a href="/blog/admin/Content-Manage/Banner-Manage"> <span class="title"> 轮播图管理 </span> </a>
                 </li>
-                <li>
-                    <a href="page_layouts_fixed_header_sidebar.html"> <span class="title"> Fixed Header &amp; Sidebar </span> </a>
-                </li>
-                <li>
-                    <a href="page_layouts_fixed_footer.html"> <span class="title"> Fixed Footer </span> </a>
-                </li>
-                <li>
-                    <a href="page_layouts_boxed_page.html"> <span class="title"> Boxed Page </span> </a>
+            </ul>
+        </li>
+        <li class="{{ Request::is('blog/admin/Function-Manage*') ? 'active open' : '' }}">
+            <a href="javascript:void(0)">
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="item-inner">
+                        <span class="title"> 功能模块 </span><i class="icon-arrow"></i>
+                    </div>
+                </div> </a>
+            <ul class="sub-menu">
+                <li class="{{ Request::is('blog/admin/Function-Manage/Email-Send*') ? 'active open' : '' }}">
+                    <a href="/blog/admin/Function-Manage/Email-Send/sendOnlyText"> <span class="title"> 邮件推送 </span> </a>
                 </li>
             </ul>
         </li>

@@ -44,6 +44,16 @@ Route::group(['prefix' => 'blog/admin'],function (){
             //轮播图删除
             Route::post('/delete','Blog\Admin\BannerController@delete');
         });
+        //功能模块
+        Route::group(['prefix' => '/Function-Manage'],function (){
+            //邮件推送
+            Route::group(['prefix' => '/Email-Send'],function (){
+                //推送纯文本
+                Route::any('/sendOnlyText',['as' => 'sendOnlyText','uses' => 'Blog\Admin\SendEmailController@index']);
+                //简单邮件+附件发送
+                Route::any('/sendEmail',['as' => 'sendEmail','uses' => 'Blog\Admin\SendEmailController@sendEmail']);
+            });
 
+        });
     });
 });
