@@ -32,6 +32,9 @@
                     <li>
                         <a href="{{ Route('sendEmail') }}"> 简单邮件(固定blade+变量) </a>
                     </li>
+                    <li>
+                        <a href="{{ Route('queueEmail') }}"> 队列邮件 </a>
+                    </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade in active">

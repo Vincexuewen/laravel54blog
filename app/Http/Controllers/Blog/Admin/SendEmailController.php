@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
+use App\Mail\TestEmail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Mail;
@@ -49,5 +50,27 @@ class SendEmailController extends Controller
             return redirect()->route('sendEmail');
         }
         return view('Blog.Admin.Email.sendEmail');
+    }
+    //队列邮件
+    public function queueEmail(Request $request){
+        if($request->isMethod('post')){
+            $useremail = $request->input('useremail');
+            $subject = $request->input('subject');
+            if($request->hasFile('enclosure')){
+                $file = $request->file('enclosure');
+                $extension = $file->getClientOriginalExtension();
+                $newFileName = md5(rand(0,1000).time()).'.'.$extension;
+                $upload = $file->move(storage_path().'/TextEmail/',$newFileName);
+                $filePath = storage_path().'/TextEmail/'.$newFileName;
+                if($upload){
+                    Mail::to($useremail)->queue(new TestEmail('vince',$subject,$filePath));
+                }else{
+                    dd('附件上传失败');
+                }
+            }
+            Mail::to($useremail)->queue(new TestEmail('vince',$subject,$filePath=null));
+            return redirect()->route('queueEmail');
+        }
+        return view('Blog.Admin.Email.queueEmail');
     }
 }

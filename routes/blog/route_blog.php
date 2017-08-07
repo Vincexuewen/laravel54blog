@@ -52,6 +52,7 @@ Route::group(['prefix' => 'blog/admin'],function (){
                 Route::any('/sendOnlyText',['as' => 'sendOnlyText','uses' => 'Blog\Admin\SendEmailController@index']);
                 //简单邮件+附件发送
                 Route::any('/sendEmail',['as' => 'sendEmail','uses' => 'Blog\Admin\SendEmailController@sendEmail']);
+                Route::any('/queueEmail',['as' => 'queueEmail','uses' => 'Blog\Admin\SendEmailController@queueEmail']);
             });
 
         });

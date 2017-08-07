@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: xuewen.zeng
- * Date: 2017/8/4
- * Time: 15:09
+ * Date: 2017/8/7
+ * Time: 11:02
  */
 ?>
 @extends('Blog.Admin.Layout.layout')
@@ -29,16 +29,16 @@
                     <li>
                         <a href="{{ Route('sendOnlyText') }}"> 发送纯文本信息 </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="{{ Route('sendEmail') }}"> 简单邮件(固定blade+变量) </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="{{ Route('queueEmail') }}"> 队列邮件 </a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade in active">
-                        <form class="form-horizontal" enctype="multipart/form-data" action="{{ Route('sendEmail') }}" method="post">
+                        <form class="form-horizontal" enctype="multipart/form-data" action="{{ Route('queueEmail') }}" method="post">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">收件人</label>
