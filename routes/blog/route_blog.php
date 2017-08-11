@@ -11,7 +11,8 @@ Route::get('/',['as' => 'reception','uses' => 'Blog\Reception\blogController@ind
 Route::get('/{id}','Blog\Reception\blogController@article')->where('id','[0-9]+');
 Route::get('/{name}','Blog\Reception\blogController@articles_type')->where('name','[a-zA-Z]+');
 Route::get('/{name}/{name2}','Blog\Reception\blogController@articles_type2')->where('name2','[a-zA-Z]+');
-Route::get('/Message.html','Blog\Reception\blogController@message');
+//资源分享
+Route::get('/share.html','Blog\Reception\shareController@index');
 //博客后台
 Route::group(['prefix' => 'blog/admin'],function (){
     Route::get('/login',['as' => 'showloginform','uses' => 'Blog\Admin\LoginController@showloginform']);
@@ -53,6 +54,16 @@ Route::group(['prefix' => 'blog/admin'],function (){
                 //简单邮件+附件发送
                 Route::any('/sendEmail',['as' => 'sendEmail','uses' => 'Blog\Admin\SendEmailController@sendEmail']);
                 Route::any('/queueEmail',['as' => 'queueEmail','uses' => 'Blog\Admin\SendEmailController@queueEmail']);
+            });
+            //文件上传
+            Route::group(['prefix' => '/Upload-File'],function (){
+                //使用$file->move()保存文件
+                Route::any('/',['as' => 'upload','uses' => 'Blog\Admin\UploadController@index']);
+                //使用$file->storeAs()保存文件
+                Route::any('/storageUpload',['as' => 'storageUpload','uses' => 'Blog\Admin\UploadController@storageUpload']);
+                //上传文件响应
+                Route::get('/responseUpload/{name}',['as' => 'responseUpload','uses' => 'Blog\Admin\UploadController@responseUpload']);
+                Route::get('/storageUploadtest/test/{name}',['as' => 'storageUploadtest','uses' => 'Blog\Admin\UploadController@storageUploadtest']);
             });
 
         });

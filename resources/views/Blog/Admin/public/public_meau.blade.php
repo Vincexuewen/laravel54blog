@@ -53,6 +53,9 @@
                 <li class="{{ Request::is('blog/admin/Function-Manage/Email-Send*') ? 'active open' : '' }}">
                     <a href="/blog/admin/Function-Manage/Email-Send/sendOnlyText"> <span class="title"> 邮件推送 </span> </a>
                 </li>
+                <li class="{{ Request::is('blog/admin/Function-Manage/Upload-File*') ? 'active open' : '' }}">
+                    <a href="/blog/admin/Function-Manage/Upload-File"> <span class="title"> 文件上传 </span> </a>
+                </li>
             </ul>
         </li>
     </ul>

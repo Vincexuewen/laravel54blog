@@ -54,12 +54,7 @@
     </div>
     {{--右侧内容--}}
     <aside class="sidebar">
-        {{--搜索框--}}
-        <div class="fixed">
-            @include('Blog.Reception.Public.public_search')
-        </div>
-        {{--热门文章--}}
-        @include('Blog.Reception.Public.public_hot_articles')
+        @yield('sidebar')
     </aside>
 </section>
 {{--底部信息--}}

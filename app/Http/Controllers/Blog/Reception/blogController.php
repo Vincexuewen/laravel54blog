@@ -23,10 +23,6 @@ class blogController extends Controller
                                                    ->paginate(8);
         return view('Blog.Reception.Home.home',compact('articles','banners'));
     }
-    //菜单栏
-    public function message(Request $request){
-        Cookie::queue('test', 'Hello, Laramist', 10);
-    }
     //文章顶级类型
     public function articles_type($name){
         $subs_class = $this->get_category($name);

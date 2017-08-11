@@ -67,3 +67,11 @@
         </div>
     </div>
 @endsection
+@section('sidebar')
+    {{--搜索框--}}
+    <div class="fixed">
+        @include('Blog.Reception.Public.public_search')
+    </div>
+    {{--热门文章--}}
+    @include('Blog.Reception.Public.public_hot_articles')
+@endsection
