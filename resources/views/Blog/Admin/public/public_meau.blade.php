@@ -37,6 +37,9 @@
                 <li class="{{ Request::is('blog/admin/Content-Manage/Banner-Manage*') ? 'active open' : '' }}">
                     <a href="/blog/admin/Content-Manage/Banner-Manage"> <span class="title"> 轮播图管理 </span> </a>
                 </li>
+                <li class="{{ Request::is('blog/admin/Content-Manage/Diary-Manage*') ? 'active open' : '' }}">
+                    <a href="/blog/admin/Content-Manage/Diary-Manage"> <span class="title"> 日记管理 </span> </a>
+                </li>
             </ul>
         </li>
         <li class="{{ Request::is('blog/admin/Function-Manage*') ? 'active open' : '' }}">

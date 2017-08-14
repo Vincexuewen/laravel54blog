@@ -16,7 +16,7 @@
                         <img class="thumb" data-original="/{{ $article_hot->ar_img_url }}" src="/{{ $article_hot->ar_img_url }}" alt="">
                     </span>
                     <span class="text">{{ $article_hot->ar_title }}</span>
-                    <span class="muted"><i class="glyphicon glyphicon-time"></i> {{ $article_hot->created_at }} </span>
+                    <span class="muted"><i class="glyphicon glyphicon-time"></i> {{ \Carbon\Carbon::parse($article_hot->created_at)->diffForHumans() }}</span>
                     <span class="muted"><i class="glyphicon glyphicon-eye-open"></i> {{ $article_hot->ar_hits }}</span>
                 </a>
             </li>

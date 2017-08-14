@@ -18,7 +18,7 @@
         </h2>
     </header>
     <p class="meta">
-        <time class="time" title="发布时间"><i class="glyphicon glyphicon-time"></i> {{ $article->created_at }}</time>
+        <time class="time" title="发布时间"><i class="glyphicon glyphicon-time"></i> {{ \Carbon\Carbon::parse($article->created_at)->diffForHumans() }}</time>
         <span class="views" title="浏览量"><i class="glyphicon glyphicon-eye-open"></i> {{ $article->ar_hits }}</span>
         <a class="comment" href="" title="评论"><i class="glyphicon glyphicon-comment"></i> 评论</a>
     </p>

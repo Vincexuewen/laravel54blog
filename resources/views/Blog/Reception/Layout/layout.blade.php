@@ -31,6 +31,7 @@
     <script src="{{ URL::asset('blog/reception/js/respond.min.js') }}" type="text/javascript"></script>
     <script src="{{ URL::asset('blog/reception/js/selectivizr-min.js') }}" type="text/javascript"></script>
     <![endif]-->
+    @yield('js')
 </head>
 
 <body class="user-select">

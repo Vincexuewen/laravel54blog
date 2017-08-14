@@ -45,6 +45,17 @@ Route::group(['prefix' => 'blog/admin'],function (){
             //轮播图删除
             Route::post('/delete','Blog\Admin\BannerController@delete');
         });
+        //日记管理
+        Route::group(['prefix' => '/Content-Manage/Diary-Manage'],function (){
+            //显示日记记录
+            Route::get('/','Blog\Admin\DiaryController@index');
+            //日记添加
+            Route::post('/create','Blog\Admin\DiaryController@create');
+            //编辑日记记录
+            Route::any('/edit/{id}','Blog\Admin\DiaryController@edit')->where('id','[0-9]+');
+            //删除日记记录
+            Route::get('/delete','Blog\Admin\DiaryController@delete');
+        });
         //功能模块
         Route::group(['prefix' => '/Function-Manage'],function (){
             //邮件推送

@@ -12,6 +12,6 @@
         @foreach($meaus as $meau)
             <li class="{{ Request::is($meau->ar_class_name.'*') ? 'active' : '' }}"><a href="/{{ $meau->ar_class_name }}">{{ $meau->c_name }}</a></li>
         @endforeach
-        <li class="{{ Request::is('/share.html') ? 'active' : '' }}"><a href="/share.html">资源共享</a></li>
+        <li class="{{ Request::is('/share.html') ? 'active' : '' }}"><a href="/share.html">日记</a></li>
     </ul>
 </div>
